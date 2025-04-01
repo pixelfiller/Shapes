@@ -9,4 +9,59 @@
 <body>
     <div id="grid"></div>
 </body>
+<footer class="footer">
+    <div class="donation-container">
+      <div class="donation-title"> ♥ Support This Project ♥ </div>
+      <div class="donation-row">
+        <div class="donation-item">
+          <span class="donation-type">BTC(Bitcoin):</span>
+          <span class="address">13c5XTuddEGH2ZpL6LDxJMRNpYX2fDHvkW</span>
+          <button class="copy-btn" data-address="13c5XTuddEGH2ZpL6LDxJMRNpYX2fDHvkW">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="donation-separator"></div>
+        <div class="donation-item">
+          <span class="donation-type">ETH(ERC20):</span>
+          <span class="address">0x6baa1cfe14a49f051c84e03c0cbb671b19efe55d</span>
+          <button class="copy-btn" data-address="0x6baa1cfe14a49f051c84e03c0cbb671b19efe55d">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="donation-separator"></div>
+        <div class="donation-item">
+          <span class="donation-type">USDT(TRC20):</span>
+          <span class="address">TTu8Q8nZsnxAkbh9GXjXLWBNGCMoanByeR</span>
+          <button class="copy-btn" data-address="TTu8Q8nZsnxAkbh9GXjXLWBNGCMoanByeR">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyButtons = document.querySelectorAll('.copy-btn');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const address = this.getAttribute('data-address');
+          navigator.clipboard.writeText(address).then(() => {
+            this.classList.add('copied');
+            setTimeout(() => {
+              this.classList.remove('copied');
+            }, 1000);
+          });
+        });
+      });
+    });
+  </script>
 </html>
